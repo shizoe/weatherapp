@@ -1,11 +1,12 @@
+import os
 import json
 import requests
 from fpdf import FPDF
 from flask import Flask, request, render_template
 
-API_KEY = "a9a17ccb60msh77339d38fd4b3a8p150631jsn2921705eb0f1"
-API_HOST = "weatherapi-com.p.rapidapi.com"
-API_URL = "https://weatherapi-com.p.rapidapi.com/current.json"
+API_KEY = os.environ.get('API_KEY')
+API_HOST = os.environ.get('API_HOST')
+API_URL = os.environ.get('API_URL')
 
 app = Flask(__name__)
 
